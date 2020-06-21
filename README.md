@@ -1,1 +1,3 @@
-20203055, KimHanrim, Software
+20203055, KimHanrim
+Software
+Kookmin Univ.
