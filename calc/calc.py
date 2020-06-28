@@ -8,15 +8,18 @@ def application(environ, start_response):
     add = 0
     mul = 0
     msg = ''
-    if '' not in [a, b]:
+    try:
         a, b = int(a), int(b)
         add = (a+b)
         mul = (a*b)
         msg = "Calculation has done"
-    else:
-        add = 0
-        mul = 0
-        msg = "Please enter the number"
+    except ValueError:
+        if a.isdigit():
+            msg = "Please enter the correct number in b"
+        elif b.isdigit():
+            msg = "Please enter the correct number in a"
+        else:
+            msg = "Please enter the correct number in a and b"
     response_body = html % {
             'add' : add,
             'mul' : mul,
